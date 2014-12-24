@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/* line 22, ../sass/timeline.scss */
+body {
+  background: #2D4C84;
+}
+
+/* 動態效果 */
+/* line 27, ../sass/timeline.scss */
+.flow > ul li,
+.flow > ul li .item-num,
+.flow > ul li .item-title {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* line 34, ../sass/timeline.scss */
+.flow ul {
+  height: 100px;
+}
+
+/* line 39, ../sass/timeline.scss */
+.flow > ul li {
+  position: relative;
+  float: left;
+  margin-top: 40px;
+  width: 90px;
+  height: 12px;
+  cursor: pointer;
+  border-bottom: 4px solid #fff;
+  /* 滑過效果 */
+  /* 品項編號 */
+  /* 品項敘述 */
+}
+/* line 48, ../sass/timeline.scss */
+.flow > ul li a {
+  text-decoration: none;
+}
+/* line 53, ../sass/timeline.scss */
+.flow > ul li:hover, .flow > ul li .active {
+  border-bottom: 4px solid #cf0;
+}
+/* line 58, ../sass/timeline.scss */
+.flow > ul li .item-num {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  margin-left: -7.5px;
+  width: 15px;
+  height: 15px;
+  line-height: 18px;
+  font-size: 9px;
+  font-weight: bold;
+  text-align: center;
+  background: #fff;
+  color: #969696;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 75, ../sass/timeline.scss */
+.flow > ul li:hover .item-num,
+.flow > ul li .active .item-num {
+  top: 3px;
+  margin-left: -10px;
+  width: 20px;
+  height: 20px;
+  line-height: 23px;
+  background: #cf0;
+  color: #000;
+}
+/* line 88, ../sass/timeline.scss */
+.flow > ul li .item-title {
+  position: absolute;
+  top: -20px;
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+}
+/* line 98, ../sass/timeline.scss */
+.flow > ul li:hover .item-title,
+.flow > ul li .active .item-title {
+  top: -30px;
+  color: #cf0;
+}

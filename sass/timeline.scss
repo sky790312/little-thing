@@ -1,0 +1,103 @@
+@mixin transition-all{
+ -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition:   all 0.2s ease-in-out;
+    -o-transition:   all 0.2s ease-in-out;
+       transition:   all 0.2s ease-in-out;
+}
+@mixin radius-all{
+    -webkit-border-radius: 50%;
+     -moz-border-radius:   50%;
+          border-radius:   50%;
+}
+
+$line-color: #fff;
+$line-color-hover: #cf0;
+$item-title_font-color: $line-color;
+$item-title_font-color-hover: $line-color-hover;
+
+$item-num_font-color: #969696;
+$item-num_font-color-hover: #000;
+
+
+body{
+   background: #2D4C84;
+}
+
+/* 動態效果 */
+.flow > ul li,
+.flow > ul li .item-num,
+.flow > ul li .item-title{
+  @include transition-all;
+}
+
+
+.flow ul{
+   height: 100px;
+}
+
+
+.flow > ul li{
+  position: relative;
+  float: left;
+  margin-top: 40px;
+  width: 90px;
+  height: 12px;
+  cursor: pointer;
+  border-bottom: 4px solid $line-color;
+
+  a{
+    text-decoration: none;
+  }
+
+  /* 滑過效果 */
+  &:hover, .active{
+    border-bottom: 4px solid $line-color-hover;
+  }
+
+  /* 品項編號 */
+  .item-num{
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    margin-left: -7.5px;
+    width:    15px;
+    height: 15px;
+    line-height: 18px;
+    font-size: 9px;
+    font-weight: bold;
+    text-align: center;
+    background: $line-color;
+    color: $item-num_font-color;
+
+    @include radius-all;
+  }
+
+  &:hover .item-num,
+  .active .item-num{
+    top:3px;
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    line-height: 23px;
+    background: $line-color-hover;
+    color: $item-num_font-color-hover;
+  }
+
+
+  /* 品項敘述 */
+  .item-title{
+    position: absolute;
+    top: -20px;
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    color: $item-title_font-color;
+  }
+
+  &:hover .item-title,
+  .active .item-title{
+    top: -30px;
+    color: $item-title_font-color-hover;
+  }
+}
