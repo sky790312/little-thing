@@ -1,11 +1,40 @@
 @charset "UTF-8";
-/* line 22, ../sass/timeline.scss */
+@import url(http://fonts.googleapis.com/css?family=Lato:900);
+/* line 3, ../sass/timeline.scss */
 body {
-  background: #2D4C84;
+  font-family: Lato;
+  background-color: #1abc9c;
+}
+
+/* line 10, ../sass/timeline.scss */
+.link a {
+  padding: 5px;
+  display: inline-block;
+  position: relative;
+  font-size: 3em;
+  color: white;
+  text-decoration: none;
+}
+/* line 18, ../sass/timeline.scss */
+.link a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 0px;
+  height: 3px;
+  background-color: yellow;
+  transition: all 0.5s ease;
+}
+/* line 32, ../sass/timeline.scss */
+.link a:hover:after {
+  max-width: 100%;
 }
 
 /* 動態效果 */
-/* line 27, ../sass/timeline.scss */
+/* line 60, ../sass/timeline.scss */
 .flow > ul li,
 .flow > ul li .item-num,
 .flow > ul li .item-title {
@@ -15,12 +44,12 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 34, ../sass/timeline.scss */
+/* line 67, ../sass/timeline.scss */
 .flow ul {
   height: 100px;
 }
 
-/* line 39, ../sass/timeline.scss */
+/* line 72, ../sass/timeline.scss */
 .flow > ul li {
   position: relative;
   float: left;
@@ -33,15 +62,15 @@ body {
   /* 品項編號 */
   /* 品項敘述 */
 }
-/* line 48, ../sass/timeline.scss */
+/* line 81, ../sass/timeline.scss */
 .flow > ul li a {
   text-decoration: none;
 }
-/* line 53, ../sass/timeline.scss */
+/* line 86, ../sass/timeline.scss */
 .flow > ul li:hover, .flow > ul li .active {
   border-bottom: 4px solid #cf0;
 }
-/* line 58, ../sass/timeline.scss */
+/* line 91, ../sass/timeline.scss */
 .flow > ul li .item-num {
   position: absolute;
   top: 7px;
@@ -59,7 +88,7 @@ body {
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 75, ../sass/timeline.scss */
+/* line 108, ../sass/timeline.scss */
 .flow > ul li:hover .item-num,
 .flow > ul li .active .item-num {
   top: 3px;
@@ -70,7 +99,7 @@ body {
   background: #cf0;
   color: #000;
 }
-/* line 88, ../sass/timeline.scss */
+/* line 121, ../sass/timeline.scss */
 .flow > ul li .item-title {
   position: absolute;
   top: -20px;
@@ -80,7 +109,7 @@ body {
   text-align: center;
   color: #fff;
 }
-/* line 98, ../sass/timeline.scss */
+/* line 131, ../sass/timeline.scss */
 .flow > ul li:hover .item-title,
 .flow > ul li .active .item-title {
   top: -30px;
