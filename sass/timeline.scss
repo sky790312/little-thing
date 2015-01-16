@@ -35,16 +35,16 @@ body {
   }
 }
 
-@mixin transition-all{
- -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition:   all 0.2s ease-in-out;
-    -o-transition:   all 0.2s ease-in-out;
-       transition:   all 0.2s ease-in-out;
+@mixin transition-all($time: 0.2s){
+ -webkit-transition: all $time ease-in-out;
+  -moz-transition:   all $time ease-in-out;
+    -o-transition:   all $time ease-in-out;
+       transition:   all $time ease-in-out;
 }
-@mixin radius-all{
-    -webkit-border-radius: 50%;
-     -moz-border-radius:   50%;
-          border-radius:   50%;
+@mixin radius-all($radius: 5px){
+    -webkit-border-radius: $radius;
+     -moz-border-radius:   $radius;
+          border-radius:   $radius;
 }
 
 $line-color: #fff;
@@ -102,7 +102,7 @@ $item-num_font-color-hover: #000;
     background: $line-color;
     color: $item-num_font-color;
 
-    @include radius-all;
+    @include radius-all(50%);
   }
 
   &:hover .item-num,
