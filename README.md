@@ -3,6 +3,6 @@ using sass with compass
 
 some easy example
 
-demo
+<a href="http://htmlpreview.github.io/?https://github.com/sky790312/timeline-example/blob/master/timeline.html"> demo </a>
 
-http://htmlpreview.github.io/?https://github.com/sky790312/timeline-example/blob/master/timeline.html
+
