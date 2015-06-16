@@ -1,5 +1,7 @@
 # timeline-example
-using sass with compass 
+using sass with compass
+
+add img fixed width and vertical center
 
 some easy example
 
