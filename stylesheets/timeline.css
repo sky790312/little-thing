@@ -229,6 +229,17 @@ body {
 }
 
 /* heart animate */
+/* line 233, ../sass/timeline.scss */
+#heart-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+/* line 238, ../sass/timeline.scss */
+#heart-section span {
+  position: relative;
+}
+
 @-webkit-keyframes heartbeat {
   0% {
     -webkit-transform: scale(0.95);
@@ -276,19 +287,19 @@ body {
     transform: scale(1.4);
   }
 }
-/* line 278, ../sass/timeline.scss */
+/* line 288, ../sass/timeline.scss */
 #heart {
   -webkit-animation-name: heartbeat;
   animation-name: heartbeat;
 }
 
-/* line 282, ../sass/timeline.scss */
+/* line 292, ../sass/timeline.scss */
 #echo {
   -webkit-animation-name: echo;
   animation-name: echo;
 }
 
-/* line 287, ../sass/timeline.scss */
+/* line 297, ../sass/timeline.scss */
 #heart, #echo {
   -webkit-animation-duration: 2000ms;
   animation-duration: 2000ms;
@@ -305,14 +316,15 @@ body {
 /*
  * battery
  */
-/* line 306, ../sass/timeline.scss */
+/* line 316, ../sass/timeline.scss */
 #battery-section {
   background: white;
   padding: 40px;
   width: 150px;
-  margin-top: 100px;
+  margin: 40px;
+  float: right;
 }
-/* line 312, ../sass/timeline.scss */
+/* line 323, ../sass/timeline.scss */
 #battery-section .battery {
   margin: 20px;
   height: 100px;
@@ -330,7 +342,7 @@ body {
   background-repeat: no-repeat;
   background-clip: content-box;
 }
-/* line 329, ../sass/timeline.scss */
+/* line 340, ../sass/timeline.scss */
 #battery-section .battery:before {
   content: attr(data-power) "%";
   position: absolute;
@@ -341,7 +353,7 @@ body {
   background: #5cb85c;
   border-radius: 3px 3px 0 0;
 }
-/* line 341, ../sass/timeline.scss */
+/* line 352, ../sass/timeline.scss */
 #battery-section .charging {
   -webkit-animation-name: charge;
   -webkit-animation-duration: 2.0s;
@@ -355,4 +367,89 @@ body {
   to {
     background-position: 0 5px;
   }
+}
+/*
+ * cube
+ */
+/* line 369, ../sass/timeline.scss */
+#cube-section {
+  float: right;
+  width: 200px;
+  height: 200px;
+  -webkit-perspective: 600px;
+  perspective: 600px;
+}
+
+/* line 377, ../sass/timeline.scss */
+#cube {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  width: 100%;
+  height: 100%;
+}
+/* line 384, ../sass/timeline.scss */
+#cube div {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 198px;
+  height: 198px;
+  position: absolute;
+  background-image: url(http://1.bp.blogspot.com/-8oHADm0XlWY/UV72I6qYX_I/AAAAAAAAD8U/83sdKrWjjRg/s1600/Dice.png);
+  background-repeat: no-repeat;
+  opacity: .75;
+}
+/* line 395, ../sass/timeline.scss */
+#cube .front {
+  transform: rotateY(0deg) translateZ(100px);
+  background-position: -12px -12px;
+}
+/* line 396, ../sass/timeline.scss */
+#cube .back {
+  transform: rotateX(180deg) translateZ(100px);
+  background-position: -463px -239px;
+}
+/* line 397, ../sass/timeline.scss */
+#cube .right {
+  transform: rotateY(90deg) translateZ(100px);
+  background-position: -236px -12px;
+}
+/* line 398, ../sass/timeline.scss */
+#cube .left {
+  transform: rotateY(-90deg) translateZ(100px);
+  background-position: -241px -235px;
+}
+/* line 399, ../sass/timeline.scss */
+#cube .top {
+  transform: rotateX(90deg) translateZ(100px);
+  background-position: -459px -12px;
+}
+/* line 400, ../sass/timeline.scss */
+#cube .bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+  background-position: -12px -235px;
+}
+/* line 403, ../sass/timeline.scss */
+#cube.count1 {
+  transform: translateZ(-100px) rotateY(0deg);
+}
+/* line 404, ../sass/timeline.scss */
+#cube.count2 {
+  transform: translateZ(-100px) rotateY(-90deg);
+}
+/* line 405, ../sass/timeline.scss */
+#cube.count3 {
+  transform: translateZ(-100px) rotateX(-90deg);
+}
+/* line 406, ../sass/timeline.scss */
+#cube.count4 {
+  transform: translateZ(-100px) rotateX(90deg);
+}
+/* line 407, ../sass/timeline.scss */
+#cube.count5 {
+  transform: translateZ(-100px) rotateY(90deg);
+}
+/* line 408, ../sass/timeline.scss */
+#cube.count6 {
+  transform: translateZ(-100px) rotateX(-180deg);
 }
