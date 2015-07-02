@@ -1,15 +1,47 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:900);
 
-@mixin transition-all($time: 0.2s){
- -webkit-transition: all $time ease-in-out;
-  -moz-transition:   all $time ease-in-out;
-    -o-transition:   all $time ease-in-out;
-       transition:   all $time ease-in-out;
-}
 @mixin radius-all($radius: 5px){
     -webkit-border-radius: $radius;
      -moz-border-radius:   $radius;
           border-radius:   $radius;
+}
+
+@mixin perspective($argument){
+  -webkit-perspective: $argument;
+     -moz-perspective: $argument;
+      -ms-perspective: $argument;
+       -o-perspective: $argument;
+          perspective: $argument;
+}
+
+@mixin transition($time: 0.2s){
+ -webkit-transition: all $time ease;
+  -moz-transition:   all $time ease;
+    -o-transition:   all $time ease;
+       transition:   all $time ease;
+}
+
+@mixin transform($argument){
+  -webkit-transform: $argument;
+     -moz-transform: $argument;
+      -ms-transform: $argument;
+       -o-transform: $argument;
+          transform: $argument;
+}
+
+@mixin transform-style($argument){
+  -webkit-transform-style: $argument;
+     -moz-transform-style: $argument;
+      -ms-transform-style: $argument;
+       -o-transform-style: $argument;
+          transform-style: $argument;
+}
+
+@mixin transform-origin($percent){
+  -webkit-transform-origin: $percent;
+     -moz-transform-origin: $percent;
+      -ms-transform-origin: $percent;
+          transform-origin: $percent;
 }
 
 body {
@@ -62,7 +94,7 @@ $item-num_font-color-hover: #000;
 .flow > ul li,
 .flow > ul li .item-num,
 .flow > ul li .item-title{
-  @include transition-all;
+  @include transition;
 }
 
 
@@ -408,3 +440,52 @@ $item-num_font-color-hover: #000;
   &.count6 { transform: translateZ( -100px ) rotateX( -180deg ); }
 }
 
+
+
+/*
+ * right content after
+ */
+
+.product{
+  position: relative;
+  margin: 60px 20px;
+  width:calc(300px + 2px);
+  height:400px;
+  @include perspective(1200px);
+}
+
+.product:hover {
+  .product-container{
+    z-index: 2;
+    @include transform(rotateY(-40deg));
+    @include transition(.5s);
+
+    &:after{
+      @include transform(rotateY(0deg));
+      @include transition(.01s);
+    }
+  }
+}
+
+.product-container{
+  @include transform-style(preserve-3d);
+  @include transition(.5s);
+  // transition:all 0.5s ease;
+  position: absolute;
+
+  &:after{
+    content: 'right side content';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 400px;
+    width: 10px;
+    padding: 0 10px;
+    text-align: center;
+    word-break: break-all;
+    font-size: 18px;
+    background-color: #ccc;
+    @include transform(rotateY(-90deg));
+    @include transform-origin(100%);
+  }
+}
